@@ -1,5 +1,5 @@
 # Automatic test system
-This is an automatic test system. It is used in order to validate that the written algorithms are correct.
+This is an automatic test system. It is used in order to validate that the written algorithms are correct. It has found a bug in a binary power algorithm, so that is pretty useful.
 
 ## Usage
 ### Windows
