@@ -43,4 +43,9 @@ namespace {
         EXPECT_EQ(BinaryPower(2, 16, 17), 1);
         EXPECT_EQ(BinaryPower(2, 1000, 228), 112);
     }
+
+    TEST(BinaryPower, BaseThreeModulo) {
+        EXPECT_EQ(BinaryPower(3, 1000, 103), 61);
+        EXPECT_EQ(BinaryPower<long long>(3, 2134686234, 148832249), 88892953);
+    }
 }
