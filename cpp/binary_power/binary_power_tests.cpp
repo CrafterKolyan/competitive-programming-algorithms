@@ -6,7 +6,7 @@
 #include <cmath>
 #include <random>
 
-namespace {
+namespace BinaryPowerTests {
     constexpr int NUMBER_OF_RANDOMIZED_TESTS = 100;
 
     TEST(BinaryPower, PowerZero) {
