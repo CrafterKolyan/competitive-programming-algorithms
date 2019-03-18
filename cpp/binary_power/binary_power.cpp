@@ -1,9 +1,9 @@
 #ifndef BINARY_POWER_CPP_
 #define BINARY_POWER_CPP_
 
-template<typename T>
-T BinaryPower(T base, T power) {
-    T result = 1;
+template<typename IntegerType>
+IntegerType BinaryPower(IntegerType base, IntegerType power) {
+    IntegerType result = 1;
     while (power) {
         if (power & 1) {
             result *= base;
@@ -14,9 +14,9 @@ T BinaryPower(T base, T power) {
     return result;
 }
 
-template<typename T>
-T BinaryPower(T base, T power, T modulo) {
-    T result = 1;
+template<typename IntegerType>
+IntegerType BinaryPower(IntegerType base, IntegerType power, IntegerType modulo) {
+    IntegerType result = 1;
     while (power) {
         if (power & 1) {
             result *= base;

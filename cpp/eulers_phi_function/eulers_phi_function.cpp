@@ -1,29 +1,29 @@
 #ifndef EULERS_PHI_FUNCTION_CPP_
 #define EULERS_PHI_FUNCTION_CPP_
 
-template<typename T>
-T EulersPhiFunction(T number) {
-    T result = number;
+template<typename IntegerType>
+IntegerType EulersPhiFunction(IntegerType x) {
+    IntegerType result = x;
 
     // Case with prime 2 is considered separately (as an optimization)
-    bool isEven = !(number & 1);
-    while (!(number & 1)) {
-        number >>= 1;
+    bool isEven = !(x & 1);
+    while (!(x & 1)) {
+        x >>= 1;
     }
     if (isEven) {
         result >>= 1;
     }
 
-    for (T i = 3; i * i <= number; i += 2) {
-        if (number % i == 0) {
+    for (IntegerType i = 3; i * i <= x; i += 2) {
+        if (x % i == 0) {
             do {
-                number /= i;
-            } while(number % i == 0);
+                x /= i;
+            } while(x % i == 0);
             result -= result / i;
         }
     }
-    if (number > 1) {
-        result -= result / number;
+    if (x > 1) {
+        result -= result / x;
     }
     return result;
 }
