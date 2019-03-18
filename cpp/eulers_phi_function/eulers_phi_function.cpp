@@ -14,7 +14,7 @@ IntegerType EulersPhiFunction(IntegerType x) {
         result >>= 1;
     }
 
-    for (IntegerType i = 3; i * i <= x; i += 2) {
+    for (IntegerType i = IntegerType(3); i * i <= x; i += 2) {
         if (x % i == 0) {
             do {
                 x /= i;

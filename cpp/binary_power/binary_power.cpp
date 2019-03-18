@@ -3,7 +3,7 @@
 
 template<typename IntegerType>
 IntegerType BinaryPower(IntegerType base, IntegerType power) {
-    IntegerType result = 1;
+    IntegerType result = IntegerType(1);
     while (power) {
         if (power & 1) {
             result *= base;
@@ -16,7 +16,7 @@ IntegerType BinaryPower(IntegerType base, IntegerType power) {
 
 template<typename IntegerType>
 IntegerType BinaryPower(IntegerType base, IntegerType power, IntegerType modulo) {
-    IntegerType result = 1;
+    IntegerType result = IntegerType(1);
     while (power) {
         if (power & 1) {
             result *= base;
