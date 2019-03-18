@@ -8,9 +8,9 @@ IntegerType EulersPhiFunction(IntegerType x) {
     // Case with prime 2 is considered separately (as an optimization)
     if (!(x & 1)) {
         result >>= 1;
-        while (!(x & 1)) {
+        do {
             x >>= 1;
-        }
+        } while (!(x & 1));
     }
 
     for (IntegerType i = IntegerType(3); i * i <= x; i += 2) {
