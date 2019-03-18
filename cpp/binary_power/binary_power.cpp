@@ -1,3 +1,6 @@
+#ifndef BINARY_POWER_CPP_
+#define BINARY_POWER_CPP_
+
 template<typename T>
 T BinaryPower(T base, T power) {
     T result = 1;
@@ -25,3 +28,5 @@ T BinaryPower(T base, T power, T modulo) {
     }
     return result;
 }
+
+#endif
