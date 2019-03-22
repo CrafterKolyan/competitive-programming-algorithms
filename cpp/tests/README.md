@@ -21,7 +21,10 @@ g++ -std=c++11 -isystem . -isystem .. -pthread main.cpp libgtest.lib -o cpp-test
 ```
 
 ### Unix
-Compile `googletest` static library and put it in this folder and name it as `libgtest.a`
+If you have `make` installed, you can just use it:
+```
+make
+```
 Use the following command:
 ```
 g++ -std=c++11 -isystem . -isystem .. -pthread main.cpp libgtest.a -o cpp-test-all
