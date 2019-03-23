@@ -25,7 +25,7 @@ If you have `make` installed, you can just use it:
 ```
 make
 ```
-Use the following command:
+Otherwise you can use the following command:
 ```
 g++ -std=c++11 -isystem . -isystem .. -pthread main.cpp libgtest.a -o cpp-test-all
 ```
