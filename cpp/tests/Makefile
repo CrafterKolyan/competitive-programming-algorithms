@@ -18,6 +18,5 @@ all: cpp-test-all
 cpp-test-all: $(SOURCES)
 	$(CC) $(CXX_FLAGS) main.cpp ${GTestLibrary} -o $@
 
-
 clean:
 	rm -f cpp-test-all cpp-test-all.exe
