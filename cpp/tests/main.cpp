@@ -2,6 +2,7 @@
 
 #include "../binary_power/binary_power_tests.cpp"
 #include "../eulers_phi_function/eulers_phi_function_tests.cpp"
+#include "../fenwick_tree/fenwick_tree_tests.cpp"
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
