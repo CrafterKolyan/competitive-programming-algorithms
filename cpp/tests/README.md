@@ -17,7 +17,7 @@ make
 ```
 Otherwise you can use the following command:
 ```
-g++ -std=c++11 -isystem . -isystem .. -pthread main.cpp libgtest.lib -o cpp-test-all
+g++ -std=c++11 -I . -I .. -pthread main.cpp libgtest.lib -o cpp-test-all
 ```
 
 ### Unix
@@ -27,5 +27,5 @@ make
 ```
 Otherwise you can use the following command:
 ```
-g++ -std=c++11 -isystem . -isystem .. -pthread main.cpp libgtest.a -o cpp-test-all
+g++ -std=c++11 -I . -I .. -pthread main.cpp libgtest.a -o cpp-test-all
 ```
