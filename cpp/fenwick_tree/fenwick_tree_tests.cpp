@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "gtest/internal/custom/gtest.h"
 
 #include "fenwick_tree.cpp"
 
@@ -78,5 +79,18 @@ namespace FenwickTreeTests {
         tree.Modify(5, 5);
         tree.Modify(7, 7);
         EXPECT_EQ(tree.Calculate(5, 8), 5 + 7);
+    }
+
+    TEST(FenwickTree, Performance) {
+        FenwickTree<long long> tree(100000);
+        for (int i = 0; i < tree.size(); ++i) {
+            tree.Modify(i, i + 1);
+        }
+
+        EXPECT_DURATION_LE( {
+            for (long long i = 0; i < 100000; ++i) {
+                EXPECT_EQ(tree.Calculate(i + 1), (i + 1) * (i + 2) / 2);
+            }
+        }, 1000);
     }
 }

@@ -13,7 +13,7 @@ class FenwickTree {
     InvertedBinaryOperation inverted_binary_operation_ = InvertedBinaryOperation();
 
 public:
-    FenwickTree() {};
+    FenwickTree() : fenwick_tree_(1, T()) {};
     FenwickTree(size_t size) : fenwick_tree_(size + 1, T()) {}
 
     void Modify(size_t index, const T &val) {
@@ -38,6 +38,10 @@ public:
         return Calculate(index, index + 1);
     }
 
+    size_t size() const {
+        return fenwick_tree_.size() - 1;
+    }
+
     void Resize(size_t size) {
         size_t initial_size = fenwick_tree_.size();
         if (size + 1 <= initial_size) {
@@ -45,7 +49,7 @@ public:
             return;
         }
         fenwick_tree_.resize(size + 1);
-        for (size_t i = std::max(initial_size, static_cast<size_t>(1)); i <= size; ++i) {
+        for (size_t i = initial_size; i <= size; ++i) {
             fenwick_tree_[i] = Calculate(i & (i - 1), i - 1);
         }
     }
