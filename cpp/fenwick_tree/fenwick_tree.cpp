@@ -45,7 +45,7 @@ public:
             return;
         }
         fenwick_tree_.resize(size + 1);
-        for (size_t i = std::max(initial_size, static_cast<size_t>(0)); i <= size; ++i) {
+        for (size_t i = std::max(initial_size, static_cast<size_t>(1)); i <= size; ++i) {
             fenwick_tree_[i] = Calculate(i & (i - 1), i - 1);
         }
     }

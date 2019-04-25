@@ -71,4 +71,12 @@ namespace FenwickTreeTests {
         tree.Resize(10);
         EXPECT_EQ(tree.Calculate(10), 1 + 2 + 3 + 4);
     }
+
+    TEST(FenwickTree, ResizeEmptyTree) {
+        FenwickTree<int> tree;
+        tree.Resize(10);
+        tree.Modify(5, 5);
+        tree.Modify(7, 7);
+        EXPECT_EQ(tree.Calculate(5, 8), 5 + 7);
+    }
 }
