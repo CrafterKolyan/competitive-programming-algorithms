@@ -45,9 +45,6 @@ public:
     void Resize(size_t size) {
         size_t initial_size = fenwick_tree_.size();
         fenwick_tree_.resize(size + 1);
-        if (size + 1 <= initial_size) {
-            return;
-        }
         for (size_t i = initial_size; i <= size; ++i) {
             fenwick_tree_[i] = Calculate(i & (i - 1), i - 1);
         }
