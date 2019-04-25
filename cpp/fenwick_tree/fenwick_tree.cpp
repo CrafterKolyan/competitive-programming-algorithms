@@ -42,7 +42,7 @@ public:
         return fenwick_tree_.size() - 1;
     }
 
-    void Resize(size_t size) {
+    void resize(size_t size) {
         size_t initial_size = fenwick_tree_.size();
         fenwick_tree_.resize(size + 1);
         for (size_t i = initial_size; i <= size; ++i) {
