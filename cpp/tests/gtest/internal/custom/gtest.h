@@ -34,4 +34,19 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
 
+#include <chrono>
+#include <future>
+
+#define EXPECT_DURATION_LE(stmt, expected_time_ms) { \
+  std::promise<bool> completed; \
+  auto stmt_future = completed.get_future(); \
+  std::thread([&](std::promise<bool>& completed) { \
+    stmt; \
+    completed.set_value(true); \
+  }, std::ref(completed)).detach(); \
+  if(stmt_future.wait_for(std::chrono::milliseconds(expected_time_ms)) == std::future_status::timeout) \
+    FAIL() << "\ttimed out (> " #expected_time_ms \
+    " ms)."; \
+}
+
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_H_
