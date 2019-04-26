@@ -1,5 +1,6 @@
 # Competitive Programming Algorithms
-![](https://img.shields.io/github/last-commit/CrafterKolyan/competitive-programming-algorithms.svg)
+![Last commit](https://img.shields.io/github/last-commit/CrafterKolyan/competitive-programming-algorithms.svg?)
+![License](https://img.shields.io/github/license/CrafterKolyan/competitive-programming-algorithms.svg?)
 
 This repository contains algorithms for competitive programming. It was created in order to fix wrong codes on E-maxx.
 
