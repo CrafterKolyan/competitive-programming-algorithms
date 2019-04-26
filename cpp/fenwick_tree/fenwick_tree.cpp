@@ -18,12 +18,20 @@ public:
 
     template<typename ForwardIterator>
     FenwickTree(ForwardIterator begin, ForwardIterator end) {
-        size_t size = 0;
+        fenwick_tree_.push_back(T());
         while (begin != end) {
-            fenwick_tree_.push_back(binary_operation_(Calculate(size & (size + 1), size), *begin));
+            fenwick_tree_.push_back(binary_operation_(fenwick_tree_.back(), *begin));
             ++begin;
-            ++size;
         }
+
+        T previous_value = fenwick_tree_.back();
+        T saved_value;
+        for (size_t i = fenwick_tree_.size() - 1; i; --i) {
+            saved_value = fenwick_tree_[i - 1];
+            fenwick_tree_[i - 1] = inverted_binary_operation_(previous_value, fenwick_tree_[i & (i - 1)]);
+            std::swap(saved_value, previous_value);
+        }
+        fenwick_tree_.resize(fenwick_tree_.size() - 1);
     }
 
     void Modify(size_t index, const T &val) {
