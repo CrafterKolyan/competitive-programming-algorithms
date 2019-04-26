@@ -25,11 +25,9 @@ public:
         }
 
         T previous_value = fenwick_tree_.back();
-        T saved_value;
         for (size_t i = fenwick_tree_.size() - 1; i; --i) {
-            saved_value = fenwick_tree_[i - 1];
-            fenwick_tree_[i - 1] = inverted_binary_operation_(previous_value, fenwick_tree_[i & (i - 1)]);
-            std::swap(saved_value, previous_value);
+            previous_value = inverted_binary_operation_(previous_value, fenwick_tree_[i & (i - 1)]);
+            std::swap(fenwick_tree_[i - 1], previous_value);
         }
         fenwick_tree_.resize(fenwick_tree_.size() - 1);
     }
