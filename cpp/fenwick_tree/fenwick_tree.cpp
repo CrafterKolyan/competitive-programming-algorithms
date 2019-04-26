@@ -13,18 +13,18 @@ class FenwickTree {
     InvertedBinaryOperation inverted_binary_operation_ = InvertedBinaryOperation();
 
 public:
-    FenwickTree() : fenwick_tree_(1, T()) {};
-    FenwickTree(size_t size) : fenwick_tree_(size + 1, T()) {}
+    FenwickTree() {};
+    FenwickTree(size_t size) : fenwick_tree_(size, T()) {}
 
     void Modify(size_t index, const T &val) {
-        for (; ++index < fenwick_tree_.size(); index |= index - 1) {
+        for (; index < fenwick_tree_.size(); index |= index + 1) {
             fenwick_tree_[index] = binary_operation_(fenwick_tree_[index], val);
         }
     }
 
     T Calculate(size_t index) const {
         T ret = T();
-        for (; index > 0; index &= index - 1) {
+        for (; index--; index &= index + 1) {
             ret = binary_operation_(ret, fenwick_tree_[index]);
         }
         return ret;
@@ -39,14 +39,14 @@ public:
     }
 
     size_t size() const {
-        return fenwick_tree_.size() - 1;
+        return fenwick_tree_.size();
     }
 
     void resize(size_t size) {
         size_t initial_size = fenwick_tree_.size();
-        fenwick_tree_.resize(size + 1);
-        for (size_t i = initial_size; i <= size; ++i) {
-            fenwick_tree_[i] = Calculate(i & (i - 1), i - 1);
+        fenwick_tree_.resize(size);
+        for (size_t i = initial_size; i < size; ++i) {
+            fenwick_tree_[i] = Calculate(i & (i + 1), i);
         }
     }
 };
