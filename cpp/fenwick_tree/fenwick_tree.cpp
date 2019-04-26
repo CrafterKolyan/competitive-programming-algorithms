@@ -18,11 +18,7 @@ public:
 
     template<typename ForwardIterator>
     FenwickTree(ForwardIterator begin, ForwardIterator end) {
-        if (begin == end) {
-            return;
-        }
-        fenwick_tree_.push_back(*begin++);
-        size_t size = 1;
+        size_t size = 0;
         while (begin != end) {
             fenwick_tree_.push_back(binary_operation_(Calculate(size & (size + 1), size), *begin));
             ++begin;
