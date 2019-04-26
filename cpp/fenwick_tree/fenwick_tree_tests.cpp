@@ -35,12 +35,11 @@ namespace FenwickTreeTests {
         std::mt19937 generator(std::chrono::steady_clock::now().time_since_epoch().count());
         std::uniform_int_distribution<> uniform_int_distribution(0, 255);
         std::vector<long long> v(100);
-        FenwickTree<long long> tree(v.size());
         for (size_t i = 0; i < v.size(); ++i) {
             v[i] = uniform_int_distribution(generator);
-            tree.Modify(i, v[i]);
         }
 
+        FenwickTree<long long> tree(v.begin(), v.end());
         std::uniform_int_distribution<> index_distribution(0, 100);
         for (int i = 0; i < NUMBER_OF_RANDOMIZED_TESTS; ++i) {
             int l = index_distribution(generator);
@@ -52,7 +51,7 @@ namespace FenwickTreeTests {
             for (size_t i = l; i < r; ++i) {
                 ans += v[i];
             }
-            EXPECT_EQ(tree.Calculate(l, r), ans);
+            ASSERT_EQ(tree.Calculate(l, r), ans);
         }
     }
 

@@ -16,6 +16,20 @@ public:
     FenwickTree() {};
     FenwickTree(size_t size) : fenwick_tree_(size, T()) {}
 
+    template<typename ForwardIterator>
+    FenwickTree(ForwardIterator begin, ForwardIterator end) {
+        if (begin == end) {
+            return;
+        }
+        fenwick_tree_.push_back(*begin++);
+        size_t size = 1;
+        while (begin != end) {
+            fenwick_tree_.push_back(binary_operation_(Calculate(size & (size + 1), size), *begin));
+            ++begin;
+            ++size;
+        }
+    }
+
     void Modify(size_t index, const T &val) {
         for (; index < fenwick_tree_.size(); index |= index + 1) {
             fenwick_tree_[index] = binary_operation_(fenwick_tree_[index], val);
