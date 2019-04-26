@@ -33,7 +33,7 @@ namespace FenwickTreeTests {
 
     TEST(FenwickTree, RandomizedLongLongElements) {
         std::mt19937 generator(std::chrono::steady_clock::now().time_since_epoch().count());
-        std::uniform_int_distribution<> uniform_int_distribution(0, 255);
+        std::uniform_int_distribution<long long> uniform_int_distribution(0LL, 255000000LL);
         std::vector<long long> v(100);
         for (size_t i = 0; i < v.size(); ++i) {
             v[i] = uniform_int_distribution(generator);
