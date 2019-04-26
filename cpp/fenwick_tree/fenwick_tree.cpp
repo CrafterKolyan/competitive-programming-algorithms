@@ -25,7 +25,7 @@ public:
     T Calculate(size_t index) const {
         T ret = T();
         for (; index--; index &= index + 1) {
-            ret = binary_operation_(ret, fenwick_tree_[index]);
+            ret = binary_operation_(fenwick_tree_[index], ret);
         }
         return ret;
     }
