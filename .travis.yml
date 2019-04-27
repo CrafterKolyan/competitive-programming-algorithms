@@ -1,0 +1,23 @@
+language: cpp
+sudo: false
+compiler: gcc
+
+os:
+  - linux
+
+install:
+  - GTESTVERSION=1.8.1
+  - wget https://github.com/google/googletest/archive/release-$GTESTVERSION.tar.gz
+  - tar xf release-$GTESTVERSION.tar.gz
+  - cd googletest-release-$GTESTVERSION
+  - cd googletest
+  - $CXX -std=c++11 -isystem include -I . -pthread -c src/gtest-all.cc
+  - mv gtest-all.o ../../cpp/tests/libgtest.a
+  - cd ../..
+
+script:
+  - make -C cpp/tests
+  - ./cpp/tests/cpp-test-all
+
+notifications:
+  email: false
