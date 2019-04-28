@@ -29,4 +29,4 @@ As the wording is complicated we provide an example:<br />
 4. **Identation is 4 spaces instead of 2 spaces**<br />
 Code in this repository shouldn't have big nesting inside it.<br />
 4 spaces is more often used by beginners than 2 spaces.<br />
-Also you can see much clearer where each block of code goes (this is actually out of thin).
+    Also you can see much clearer where each block of code goes (this is actually created out of thin air).
