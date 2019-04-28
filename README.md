@@ -6,7 +6,9 @@
 This repository contains algorithms for competitive programming. It was created in order to fix wrong codes on E-maxx.
 
 ## Testing
-For now we use googletest (gtest) as an automatic test system.
+For now we use googletest (gtest) [v1.8.1](https://github.com/google/googletest/releases/tag/release-1.8.1) as an automatic test system.
+
+Also we use [Travis CI](https://travis-ci.com/) to provide automatic testing of all branches (see tests badge on top).
 
 More info: [cpp/tests/README.md](cpp/tests/README.md)
 
