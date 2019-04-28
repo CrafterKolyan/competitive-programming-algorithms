@@ -23,4 +23,6 @@ We want to keep structure as simple as possible.
 One source file with implementation and one with tests.
 It should be possible to copy an implementation and paste it anywhere.
 3. **Possibility of including source (`.cpp`) files**. <br />
-This is due to previous exception.
+This is due to previous exception.<br />
+As the wording is complicated we provide an example:<br />
+`#include "../binary_power/binary_power_tests.cpp"`
