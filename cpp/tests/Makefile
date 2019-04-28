@@ -1,6 +1,8 @@
 .PHONY: all clean
 
-CC = g++
+ifndef CXX
+CXX = g++
+endif
 CXX_FLAGS = -std=c++11 -I . -I .. -pthread
 
 SOURCES = $(wildcard ../*/*.cpp)
@@ -16,7 +18,7 @@ endif
 all: cpp-test-all
 
 cpp-test-all: $(SOURCES)
-	$(CC) $(CXX_FLAGS) main.cpp ${GTestLibrary} -o $@
+	$(CXX) $(CXX_FLAGS) main.cpp ${GTestLibrary} -o $@
 
 clean:
 	rm -f cpp-test-all cpp-test-all.exe
