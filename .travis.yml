@@ -6,6 +6,7 @@ compiler:
 
 os:
   - linux
+  - osx
 
 install:
   - GTESTVERSION=1.8.1
