@@ -1,5 +1,5 @@
 # Competitive Programming Algorithms
-[![Build Status](https://img.shields.io/travis/com/CrafterKolyan/competitive-programming-algorithms.svg?label=tests)](https://travis-ci.com/CrafterKolyan/competitive-programming-algorithms)
+[![Build Status](https://img.shields.io/travis/com/CrafterKolyan/competitive-programming-algorithms/master.svg?label=tests)](https://travis-ci.com/CrafterKolyan/competitive-programming-algorithms)
 ![Last commit](https://img.shields.io/github/last-commit/CrafterKolyan/competitive-programming-algorithms.svg?)
 [![License](https://img.shields.io/github/license/CrafterKolyan/competitive-programming-algorithms.svg?color=blue)](LICENSE)
 
