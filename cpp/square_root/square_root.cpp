@@ -21,7 +21,7 @@ double SquareRoot(double x) {
     initial_value &= ~(0xFFFULL << 52);
     initial_value |= power << 52;
 
-    double current_approximation = *(double *)&initial_value;
+    double current_approximation = *reinterpret_cast<double *>(&initial_value);
     double previous_value = 0.0;
     double previous_previous_value = 0.0;
     // Newton's method
