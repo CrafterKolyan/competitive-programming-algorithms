@@ -21,7 +21,8 @@ install:
   - cd googletest-release-$GTESTVERSION
   - cd googletest
   - $CXX -std=c++11 -isystem include -I . -pthread -c src/gtest-all.cc
-  - mv gtest-all.o ../../cpp/tests/libgtest.a
+  - if [ "$TRAVIS_OS_NAME" == "windows" ]; then GTEST_NAME=libgtest.lib; else GTEST_NAME=libgtest.a; fi
+  - mv gtest-all.o ../../cpp/tests/$GTEST_NAME
   - cd ../..
 
 script:
