@@ -8,15 +8,11 @@ matrix:
     - os: linux
       compiler: clang
     - os: osx
+      compiler: gcc
+    - os: osx
       compiler: clang
     - os: windows
       compiler: gcc
-      install: true
-      script:
-        - cd cpp/tests
-        - mingw32-make
-        - ./cpp-test-all.exe
-        - cd ../..
 
 install:
   - GTESTVERSION=1.8.1
@@ -29,7 +25,8 @@ install:
   - cd ../..
 
 script:
-  - make -C cpp/tests
+  - if [ "$TRAVIS_OS_NAME" == "windows" ]; then MAKE_PROGRAM=mingw32-make; else MAKE_PROGRAM=make; fi
+  - $MAKE_PROGRAM -C cpp/tests
   - ./cpp/tests/cpp-test-all
 
 notifications:
