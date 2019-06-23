@@ -33,7 +33,7 @@ double SquareRoot(double x) {
     if (current_approximation == previous_value) {
         return current_approximation;
     }
-    return abs(current_approximation * current_approximation - x) < abs(previous_value * previous_value - x) ? current_approximation : previous_value;
+    return std::abs(current_approximation * current_approximation - x) < std::abs(previous_value * previous_value - x) ? current_approximation : previous_value;
 }
 
 #endif

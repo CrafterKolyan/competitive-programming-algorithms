@@ -13,7 +13,7 @@ class FenwickTree {
     InvertedBinaryOperation inverted_binary_operation_ = InvertedBinaryOperation();
 
 public:
-    FenwickTree() {};
+    FenwickTree() {}
     FenwickTree(size_t size) : fenwick_tree_(size, T()) {}
 
     template<typename ForwardIterator>

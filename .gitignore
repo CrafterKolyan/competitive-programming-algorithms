@@ -1,2 +1,12 @@
 cpp/tests/cpp-test-all
 cpp/tests/cpp-test-all.exe
+
+# Qt Creator files
+CPA.cflags
+CPA.config
+CPA.creator
+CPA.creator.user
+CPA.cflags
+CPA.cxxflags
+CPA.files
+CPA.includes

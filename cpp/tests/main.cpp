@@ -5,6 +5,9 @@
 #include "../fenwick_tree/fenwick_tree_tests.cpp"
 #include "../square_root/square_root_tests.cpp"
 
+#include <iostream>
+#include <iomanip>
+
 int main(int argc, char **argv) {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr);
