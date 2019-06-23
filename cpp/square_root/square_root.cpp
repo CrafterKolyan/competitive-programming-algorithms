@@ -11,7 +11,7 @@ double SquareRoot(double x) {
         return 0.0;
     }
     unsigned long long initial_value = *reinterpret_cast<unsigned long long *>(&x);
-    unsigned long long power = (initial_value >> 52) - 1023;
+    long long power = (initial_value >> 52) - 1023;
     if (power == 1024) {
         return std::numeric_limits<double>::infinity();
     }
@@ -19,7 +19,7 @@ double SquareRoot(double x) {
     power += 1023;
 
     initial_value &= ~(0xFFFULL << 52);
-    initial_value |= power << 52;
+    initial_value |= static_cast<unsigned long long>(power) << 52;
 
     double current_approximation = *reinterpret_cast<double *>(&initial_value);
     double previous_value = 0.0;

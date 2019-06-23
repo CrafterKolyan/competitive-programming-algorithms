@@ -41,10 +41,10 @@ namespace FenwickTreeTests {
 
         FenwickTree<long long> tree(v.begin(), v.end());
         EXPECT_EQ(tree.size(), v.size());
-        std::uniform_int_distribution<> index_distribution(0, 100);
+        std::uniform_int_distribution<size_t> index_distribution(0, 100);
         for (int i = 0; i < NUMBER_OF_RANDOMIZED_TESTS; ++i) {
-            int l = index_distribution(generator);
-            int r = index_distribution(generator);
+            size_t l = index_distribution(generator);
+            size_t r = index_distribution(generator);
             if (l > r) {
                 std::swap(l, r);
             }
