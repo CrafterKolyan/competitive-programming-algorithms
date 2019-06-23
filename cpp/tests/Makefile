@@ -3,7 +3,7 @@
 ifndef CXX
 CXX = g++
 endif
-CXX_FLAGS = -std=c++11 -I . -I .. -pthread
+CXX_FLAGS = -std=c++14 -I . -I .. -pthread
 
 SOURCES = $(wildcard ../*/*.cpp)
 
