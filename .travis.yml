@@ -11,13 +11,7 @@ matrix:
       compiler: clang
     - os: windows
       compiler: gcc
-      install:
-        - wget -O googletest.zip https://github.com/google/googletest/archive/release-1.8.1.zip
-        - 7z x googletest.zip
-        - cd googletest-release-1.8.1/googletest
-        - g++ -std=c++11 -isystem include -I . -pthread -c src/gtest-all.cc
-        - mv gtest-all.o ../../cpp/tests/libgtest.lib
-        - cd ../..
+      install: true
       script:
         - cd cpp/tests
         - mingw32-make
