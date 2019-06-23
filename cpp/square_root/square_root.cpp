@@ -10,7 +10,7 @@ double SquareRoot(double x) {
     } else if (x == 0.0) {
         return 0.0;
     }
-    unsigned long long initial_value = *(unsigned long long *)&x;
+    unsigned long long initial_value = *reinterpret_cast<unsigned long long *>(&x);
     unsigned long long power = (initial_value >> 52) - 1023;
     if (power == 1024) {
         return std::numeric_limits<double>::infinity();

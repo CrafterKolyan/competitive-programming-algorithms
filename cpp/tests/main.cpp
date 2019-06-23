@@ -6,6 +6,8 @@
 #include "../square_root/square_root_tests.cpp"
 
 int main(int argc, char **argv) {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
