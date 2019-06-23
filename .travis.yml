@@ -1,18 +1,19 @@
 language: cpp
 sudo: false
 
+os:
+  - linux
+  - osx
+  - windows
+
+compiler:
+  - gcc
+  - clang
+
 matrix:
-  include:
-    - os: linux
-      compiler: gcc
-    - os: linux
-      compiler: clang
-    - os: osx
-      compiler: gcc
-    - os: osx
-      compiler: clang
+  exclude:
     - os: windows
-      compiler: gcc
+      compiler: clang
 
 install:
   - GTESTVERSION=1.8.1
