@@ -17,7 +17,7 @@ We use [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.htm
 with some exceptions:
 1. **Source files have `.cpp` extension rather than `.cc`** <br />
 As this code can be used by beginners and `.cpp` extension is the most popular we don't want to
-create additional difficulties connected with understanding where the code is placed (and why do we use `.cc` extension).
+create additional difficulties in understanding where the code is placed (and why do we use `.cc` extension).
 2. **No need to create header (`.h`) files.** <br />
 We want to keep structure as simple as possible.
 One source file with implementation and one with tests.
@@ -29,4 +29,4 @@ As the wording is complicated we provide an example:<br />
 4. **Identation is 4 spaces instead of 2 spaces**<br />
 Code in this repository shouldn't have big nesting inside it.<br />
 4 spaces is more often used by beginners than 2 spaces.<br />
-Also you can see much clearer where each block of code goes (this is actually created out of thin air).
+Also you can see much clearer where each block of code goes (this is created out of thin air).
